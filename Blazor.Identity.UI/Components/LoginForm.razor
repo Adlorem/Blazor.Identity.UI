@@ -1,0 +1,58 @@
+﻿@using Blazor.Identity.UI.Enums
+@using Blazor.Identity.UI.Interfaces
+@inject SignInManager<IdentityUser> _signInManager
+@inject NavigationManager _navigationManager
+@inject UserManager<IdentityUser> _userManager
+@inject IEmailService _emailService
+
+
+<div class="container-fluid">
+    
+    <div class="mt-4">
+        <div class="rounded d-flex justify-content-center">           
+            <div class="col-md-4 col-sm-12 shadow-lg p-5 bg-light">
+                <div class="text-center mb-4">
+                    <h3 class="text-primary">SignIn</h3>
+                </div>
+                <Alert AlertMessage="_alertMessage"/>
+                <div class="d-grid gap-3">
+                    <button class="btn btn-success mb-2 @(_isResendVisible == false ? "d-none" : string.Empty)" type="button" 
+                    disabled="@_isLoading" @onclick="() => OnResendEmailClick()">ResendActivationEmail</button>
+                </div>
+                <EditForm Model="@_model" OnValidSubmit="OnValidSubmit">
+                    <DataAnnotationsValidator />
+                    <div class="form-floating mb-3">
+                        <InputText @bind-Value="_model.Email" class="form-control" id="floatingInputEmail" placeholder="Email" required autofocus />
+                        <label for="floatingInputEmail">Email</label>
+                        <ValidationMessage For="@(() => _model.Email)" />
+                    </div>
+                    <div class="form-floating mb-3">
+                        <InputText @bind-Value="_model.Password" type="password" class="form-control" id="floatingPassword" placeholder="Password" required autofocus />
+                        <label for="floatingPassword">Password</label>
+                        <ValidationMessage For="@(() => _model.Password)" />
+                    </div>
+                    <div class="form-check mb-4">
+                        <InputCheckbox @bind-Value="_model.RememberMe" class="form-check-input" type="checkbox" id="flexCheckDefault" />
+                        <label class="form-check-label" for="flexCheckDefault">
+                            Remember Me
+                        </label>
+                    </div>
+                    <div class="d-grid mb-2">
+                        <button disabled="@_isLoading" class="btn btn-lg btn-primary btn-login fw-bold text-uppercase">
+                            Login
+                            @if (_isLoading)
+                            {
+                                <span class="spinner-border spinner-border-sm mr-1"></span>
+                            }
+                        </button>
+                    </div>
+                    <a class="d-block text-center mt-2 small" href="account/forgotpassword">DontRememberPassword</a>
+                    <a class="d-block text-center mt-2 small" href="account/register">DontHaveAccountRegister</a>
+                </EditForm>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

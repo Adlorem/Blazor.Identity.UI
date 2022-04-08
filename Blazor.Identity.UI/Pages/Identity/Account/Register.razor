@@ -1,0 +1,10 @@
+﻿@page "/Account/Register"
+
+<AuthorizeView>
+    <Authorized>
+        <Blazor.Identity.UI.Components.LogoutButton />
+    </Authorized>
+    <NotAuthorized>
+        <Blazor.Identity.UI.Components.RegisterForm />
+    </NotAuthorized>
+</AuthorizeView>

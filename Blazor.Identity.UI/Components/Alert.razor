@@ -1,0 +1,21 @@
+﻿@using Blazor.Identity.UI.Common
+
+<div class="alert @AlertMessage.AlertType @(AlertMessage.IsVisible == false ? "d-none" : string.Empty)" role="alert">
+    @if (AlertMessage.IsVisible && !string.IsNullOrEmpty(AlertMessage.Title))
+    {
+        <h4 class="alert-heading">@AlertMessage.Title</h4>
+        <hr />
+    }
+    @if (AlertMessage.IsVisible && AlertMessage.Messages != null)
+    {
+        foreach (var message in AlertMessage.Messages)
+        {
+            <p>@message</p>
+        }
+    }
+</div>
+
+@code{
+    [Parameter]
+    public AlertMessage AlertMessage { get; set; }
+}
