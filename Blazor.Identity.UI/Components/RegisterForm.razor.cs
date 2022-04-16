@@ -6,6 +6,7 @@ using Blazor.Identity.UI.Services;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.WebUtilities;
+using Microsoft.Extensions.Localization;
 using System.Text;
 using System.Text.Encodings.Web;
 
@@ -23,6 +24,8 @@ namespace Blazor.Identity.UI.Components
         IEmailService _emailService { get; set; }
         [Inject]
         NavigationManager _navigationManager { get; set; }
+        [Inject]
+        IStringLocalizer<Language> _localizer { get; set; }
 
         private RegisterModel _model = new RegisterModel();
         private bool _isLoading = false;
@@ -43,7 +46,8 @@ namespace Blazor.Identity.UI.Components
                     await SendActivationEmailAsync(_model.Email);
                     _isRegistered = true;
                     _registrationFinishedAlert = AlertMessage.Show(AlertType.AlertSuccess
-                        , "RegistrationComleted", new string[] {"RegistratonCompletedConfirmYourEmail"});
+                        , _localizer["RegistrationComleted"].Value, 
+                        new string[] {_localizer["RegistratonCompletedConfirmYourEmail"].Value});
                 }
                 else
                 {
@@ -90,8 +94,8 @@ namespace Blazor.Identity.UI.Components
             var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
             code = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(code));
             var callbackUrl = $"{baseUri}Account/ConfirmEmail?user={user.Id}&code={code}";
-            await _emailService.SendEmailAsync(user.Email, "ConfirmYourEmail",
-                $"PleaseConfirmYourAccountByClickHere <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>ClickHere</a>.");
+            await _emailService.SendEmailAsync(user.Email, _localizer["ConfirmYourEmail"].Value,
+                $"{_localizer["PleaseConfirmYourAccount"].Value} <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>{_localizer["ClickHere"].Value}</a>.");
         }
 
         private IdentityUser CreateUser(RegisterModel model)

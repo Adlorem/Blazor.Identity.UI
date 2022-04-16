@@ -7,8 +7,12 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+// Define variables from config.
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+var cultures = builder.Configuration.GetSection("Cultures").
+GetChildren().ToDictionary(x => x.Key, x => x.Value);
+var supportedCultures = cultures.Keys.ToArray();
+
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
@@ -18,7 +22,7 @@ builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
 builder.Services.AddSingleton<IEmailService, EmailService>();
 builder.Services.AddSingleton<WeatherForecastService>();
-
+builder.Services.AddLocalization(options => options.ResourcesPath = "Resources");
 
 var app = builder.Build();
 
@@ -45,6 +49,10 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.UseBlazorIdentityUI();
+
+app.UseRequestLocalization(new RequestLocalizationOptions()
+        .AddSupportedCultures(supportedCultures)
+        .AddSupportedUICultures(supportedCultures));
 
 app.MapControllers();
 app.MapBlazorHub();

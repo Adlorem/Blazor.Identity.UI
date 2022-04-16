@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Blazor.Identity.UI.Resources {
+namespace Blazor.Identity.UI {
     using System;
     
     
@@ -61,11 +61,56 @@ namespace Blazor.Identity.UI.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to This account is not activated..
+        /// </summary>
+        public static string AccountNotActivated {
+            get {
+                return ResourceManager.GetString("AccountNotActivated", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to We have resent your activation email. Please check your inbox..
         /// </summary>
         public static string ActivationResentCheckYourInbox {
             get {
                 return ResourceManager.GetString("ActivationResentCheckYourInbox", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Check your inbox to complete password change..
+        /// </summary>
+        public static string CheckYourInboxToCompletePasswordReset {
+            get {
+                return ResourceManager.GetString("CheckYourInboxToCompletePasswordReset", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to klick here.
+        /// </summary>
+        public static string ClickHere {
+            get {
+                return ResourceManager.GetString("ClickHere", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Confirm password.
+        /// </summary>
+        public static string ConfirmPassword {
+            get {
+                return ResourceManager.GetString("ConfirmPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Confirm your email..
+        /// </summary>
+        public static string ConfirmYourEmail {
+            get {
+                return ResourceManager.GetString("ConfirmYourEmail", resourceCulture);
             }
         }
         
@@ -79,11 +124,209 @@ namespace Blazor.Identity.UI.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to You don&apos;t have account? Register..
+        /// </summary>
+        public static string DontHaveAccountRegister {
+            get {
+                return ResourceManager.GetString("DontHaveAccountRegister", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to I don&apos;t remember password.
+        /// </summary>
+        public static string DontRememberPassword {
+            get {
+                return ResourceManager.GetString("DontRememberPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Email.
+        /// </summary>
+        public static string Email {
+            get {
+                return ResourceManager.GetString("Email", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Emial is not confirmed..
+        /// </summary>
+        public static string EmailNotConfirmed {
+            get {
+                return ResourceManager.GetString("EmailNotConfirmed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Error !.
         /// </summary>
         public static string Error {
             get {
                 return ResourceManager.GetString("Error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Join.
+        /// </summary>
+        public static string Join {
+            get {
+                return ResourceManager.GetString("Join", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Login.
+        /// </summary>
+        public static string Login {
+            get {
+                return ResourceManager.GetString("Login", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Logout.
+        /// </summary>
+        public static string Logout {
+            get {
+                return ResourceManager.GetString("Logout", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Password.
+        /// </summary>
+        public static string Password {
+            get {
+                return ResourceManager.GetString("Password", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please confirm you account activation and.
+        /// </summary>
+        public static string PleaseConfirmYourAccount {
+            get {
+                return ResourceManager.GetString("PleaseConfirmYourAccount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Register.
+        /// </summary>
+        public static string Register {
+            get {
+                return ResourceManager.GetString("Register", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Registration completed.
+        /// </summary>
+        public static string RegistrationCompleted {
+            get {
+                return ResourceManager.GetString("RegistrationCompleted", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Registration completed. Please check your email to activate account..
+        /// </summary>
+        public static string RegistratonCompletedConfirmYourEmail {
+            get {
+                return ResourceManager.GetString("RegistratonCompletedConfirmYourEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remember me..
+        /// </summary>
+        public static string RememberMe {
+            get {
+                return ResourceManager.GetString("RememberMe", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Resend activation.
+        /// </summary>
+        public static string ResendActivationEmail {
+            get {
+                return ResourceManager.GetString("ResendActivationEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Reset.
+        /// </summary>
+        public static string Reset {
+            get {
+                return ResourceManager.GetString("Reset", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Reset Password.
+        /// </summary>
+        public static string ResetPassword {
+            get {
+                return ResourceManager.GetString("ResetPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Reset your password.
+        /// </summary>
+        public static string RestYourPassword {
+            get {
+                return ResourceManager.GetString("RestYourPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Save.
+        /// </summary>
+        public static string Save {
+            get {
+                return ResourceManager.GetString("Save", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Set new password.
+        /// </summary>
+        public static string SetNewPassword {
+            get {
+                return ResourceManager.GetString("SetNewPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sign in.
+        /// </summary>
+        public static string SignIn {
+            get {
+                return ResourceManager.GetString("SignIn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to To reset your password.
+        /// </summary>
+        public static string ToResetYourPassword {
+            get {
+                return ResourceManager.GetString("ToResetYourPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unknown user..
+        /// </summary>
+        public static string UnknownUser {
+            get {
+                return ResourceManager.GetString("UnknownUser", resourceCulture);
             }
         }
         
@@ -102,6 +345,15 @@ namespace Blazor.Identity.UI.Resources {
         public static string YouHaveSuccessfullyConfirmedEmail {
             get {
                 return ResourceManager.GetString("YouHaveSuccessfullyConfirmedEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You have successfully reset your password. You can login with new password..
+        /// </summary>
+        public static string YouHaveSuccessfullyResetYourPassword {
+            get {
+                return ResourceManager.GetString("YouHaveSuccessfullyResetYourPassword", resourceCulture);
             }
         }
     }

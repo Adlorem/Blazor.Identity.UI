@@ -1,1 +1,3 @@
-﻿<a href="/Account/Logout" class="btn btn-primary">Logout</a>
+﻿@inject IStringLocalizer<Language> _localizer
+
+<a href="/Account/Logout" class="btn btn-primary">@_localizer["Logout"]</a>

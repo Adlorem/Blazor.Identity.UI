@@ -5,6 +5,7 @@ using Blazor.Identity.UI.Models;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.WebUtilities;
+using Microsoft.Extensions.Localization;
 using System.Text;
 using System.Text.Encodings.Web;
 
@@ -16,6 +17,8 @@ namespace Blazor.Identity.UI.Components
         NavigationManager _navigationManager { get; set; }
         [Inject]
         UserManager<IdentityUser> _userManager { get; set; }
+        [Inject]
+        IStringLocalizer<Language> _localizer { get; set; }
         [Inject]
         IEmailService _emailService { get; set; }
 
@@ -33,9 +36,10 @@ namespace Blazor.Identity.UI.Components
 
             if (result.Succeeded)
             {
+                var test = _localizer["CheckYourInboxToCompletePasswordReset"];
                 _isResetCompleted = true;
                 _resetCompletedMessage = AlertMessage.Show(AlertType.AlertSuccess
-                    ,"Success", new[] { "CheckYourInboxToCompletePasswordReset" });
+                    ,"Success", new[] { _localizer["CheckYourInboxToCompletePasswordReset"].Value });
             }
             else
             {
@@ -52,12 +56,12 @@ namespace Blazor.Identity.UI.Components
             var user = await _userManager.FindByEmailAsync(email);
             if (user is null)
             {
-                return ActionResult.Failed(new[] { "UnknownUser" });
+                return ActionResult.Failed(new[] { _localizer["UnknownUser"].Value });
             }
 
-            if (!(await _userManager.IsEmailConfirmedAsync(user)))
+            if ((await _userManager.IsEmailConfirmedAsync(user)) == false)
             {
-                return ActionResult.Failed(new[] { "AccountNotActivated" });
+                return ActionResult.Failed(new[] { _localizer["AccountNotActivated"].Value });
             }
 
             await SendForgotPasswordEmailAsync(user);
@@ -72,8 +76,8 @@ namespace Blazor.Identity.UI.Components
             var code = await _userManager.GeneratePasswordResetTokenAsync(user);
             code = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(code));
             var callbackUrl = $"{baseUri}Account/ResetPassword?code={code}&email={user.Email}";
-            await _emailService.SendEmailAsync(user.Email, "RestYourPassword",
-                $"PleaseResetYourPassword <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>ClickHere</a>.");
+            await _emailService.SendEmailAsync(user.Email, _localizer["ResetYourPassword"].Value ,
+                $"{_localizer["ToResetYourPassword"].Value} <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>{_localizer["ClickHere"]}</a>.");
         }
     }
 }

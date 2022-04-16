@@ -2,8 +2,10 @@
 using Blazor.Identity.UI.Enums;
 using Blazor.Identity.UI.Models;
 using Blazor.Identity.UI.Services;
+using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.WebUtilities;
+using Microsoft.Extensions.Localization;
 using System.Text;
 using System.Text.Encodings.Web;
 
@@ -11,6 +13,9 @@ namespace Blazor.Identity.UI.Components
 {
     public partial class LoginForm
     {
+        [Inject]
+        IStringLocalizer<Language> _localizer { get; set; }
+
         private LoginModel _model = new LoginModel();
         private bool _isLoading = false;
         private bool _isResendVisible = false;
@@ -36,7 +41,7 @@ namespace Blazor.Identity.UI.Components
                     _alertMessage = AlertMessage.Show(AlertType.AlertDanger,
                                     result.Errors.Select(x => x.Description));
 
-                    if (result.Errors.Any(x => x.Code == "EmailNotConfirmed"))
+                    if (result.Errors.Any(x => x.Code == _localizer["EmailNotConfirmed"].Value))
                     {
                         _isResendVisible = true;
                     }
@@ -56,7 +61,7 @@ namespace Blazor.Identity.UI.Components
             {
                 await ReSendActivationEmailAsync(_model.Email);
                 _alertMessage = AlertMessage.Show(AlertType.AlertSuccess
-                    , new List<string> { "ActivationResentCheckYourInbox" });
+                    , new List<string> { _localizer["ActivationResentCheckYourInbox"].Value });
             }
             _isLoading = _isResendVisible = false;
 
@@ -95,7 +100,7 @@ namespace Blazor.Identity.UI.Components
                 {
                     return IdentityResult.Failed(new IdentityError
                     {
-                        Code = "EmailNotConfirmed",
+                        Code = _localizer["EmailNotConfirmed"].Value,
                         Description = $"Email {user.Email} is not confirmed."
                     });
                 }
@@ -115,8 +120,9 @@ namespace Blazor.Identity.UI.Components
             var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
             code = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(code));
             var callbackUrl = $"{baseUri}account/confirmemail?user={user.Id}&code={code}";
-            await _emailService.SendEmailAsync(user.Email, "ConfirmYourEmail",
-                $"PleaseConfirmYourAccountByClickHere <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>ClickHere</a>.");
+            await _emailService.SendEmailAsync(user.Email, _localizer["ConfirmYourEmail"],
+                $"{_localizer["PleaseConfirmYourAccount"].Value} " +
+                $"<a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>{_localizer["ClickHere"]}</a>.");
          
         }
     }

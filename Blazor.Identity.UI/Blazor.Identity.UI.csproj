@@ -34,6 +34,8 @@
 	    <DesignTime>True</DesignTime>
 	    <AutoGen>True</AutoGen>
 	    <DependentUpon>Language.resx</DependentUpon>
+	    <Generator></Generator>
+	    <CustomToolNamespace></CustomToolNamespace>
 	  </Compile>
 	</ItemGroup>
 
@@ -41,6 +43,7 @@
 	  <EmbeddedResource Update="Resources\Language.resx">
 	    <Generator>PublicResXFileCodeGenerator</Generator>
 	    <LastGenOutput>Language.Designer.cs</LastGenOutput>
+	    <CustomToolNamespace>Blazor.Identity.UI</CustomToolNamespace>
 	  </EmbeddedResource>
 	</ItemGroup>
 

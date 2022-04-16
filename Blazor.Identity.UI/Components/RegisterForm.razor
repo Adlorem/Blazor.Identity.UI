@@ -5,37 +5,37 @@
         <div class="rounded d-flex justify-content-center">
             <div class="col-md-4 col-sm-12 shadow-lg p-5 bg-light">
                 <div class="text-center mb-4">
-                    <h3 class="text-primary">Join</h3>
+                    <h3 class="text-primary">@_localizer["Join"]</h3>
                 </div>
                 <Alert AlertMessage="_alertMessage"/>
                 <EditForm Model="@_model" OnValidSubmit="OnValidSubmit">
                     <DataAnnotationsValidator />
                     <div class="form-floating mb-3">
                         <InputText @bind-Value="_model.Email" class="form-control" id="floatingInputEmail" placeholder="Email" required autofocus />
-                        <label for="floatingInputEmail">Email</label>
+                        <label for="floatingInputEmail">@_localizer["Email"]</label>
                         <ValidationMessage For="@(() => _model.Email)" />
                     </div>
                     <div class="form-floating mb-3">
                         <InputText @bind-Value="_model.Password" type="password" class="form-control" id="floatingPassword" placeholder="Password" />
-                        <label for="floatingPassword">Password</label>
+                        <label for="floatingPassword">@_localizer["Password"]</label>
                         <ValidationMessage For="@(() => _model.Password)" />
                     </div>
                     <div class="form-floating mb-3">
                         <InputText @bind-Value="_model.ConfirmPassword" type="password" class="form-control" id="floatingConfirmPassword" placeholder="ConfirmPassword" />
-                        <label for="floatingConfirmPassword">ConfirmPassword</label>
+                        <label for="floatingConfirmPassword">@_localizer["ConfirmPassword"]</label>
                         <ValidationMessage For="@(() => _model.ConfirmPassword)" />
                     </div>
                     <div class="d-grid mb-2">
                         <button disabled="@_isLoading" class="btn btn-lg btn-primary btn-login fw-bold text-uppercase">
-                            Register
+                            @_localizer["Register"]
                             @if (_isLoading)
                             {
                                 <span class="spinner-border spinner-border-sm mr-1"></span>
                             }
                         </button>
                     </div>
-                    <a class="d-block text-center mt-2 small" href="account/forgotpassword">DontRememberPassword</a>
-                    <a class="d-block text-center mt-2 small" href="account/login">AlreadyHaveAccountLogin</a>
+                    <a class="d-block text-center mt-2 small" href="account/forgotpassword">@_localizer["DontRememberPassword"]</a>
+                    <a class="d-block text-center mt-2 small" href="account/login">@_localizer["AlreadyHaveAccountLogin"]</a>
                 </EditForm>
             </div>
         </div>
