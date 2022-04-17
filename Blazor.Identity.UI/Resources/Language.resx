@@ -156,6 +156,9 @@
   <data name="DeleteAccount" xml:space="preserve">
     <value>Delete account</value>
   </data>
+  <data name="DeleteAccountConfirmation" xml:space="preserve">
+    <value>Your account has been successfully deleted, and your personal informations has been removed from our system.</value>
+  </data>
   <data name="DeleteAccountWarning" xml:space="preserve">
     <value>Deleting your personal data will permanently remove your account, and this cannot be recovered.</value>
   </data>

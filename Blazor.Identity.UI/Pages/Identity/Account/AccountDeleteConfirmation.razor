@@ -1,0 +1,14 @@
+﻿@page "/Account/Deleted"
+@inject IStringLocalizer<Language> _localizer
+
+<Alert AlertMessage="_alertMessage"/>
+
+@code {
+    private AlertMessage _alertMessage = AlertMessage.Hide();
+
+    protected override void OnInitialized()
+    {
+        _alertMessage = AlertMessage.Show(AlertType.AlertInfo, new[] { _localizer["DeleteAccountConfirmation"].Value });
+    }
+
+}

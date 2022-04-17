@@ -51,7 +51,15 @@ namespace Blazor.Identity.UI.Services
             else if (context.Request.Path == "/Account/Logout")
             {
                 await signInManager.SignOutAsync();
-                context.Response.Redirect("/");
+
+                if (context.Request.Query.ContainsKey("returnUrl"))
+                {
+                    context.Response.Redirect($"{context.Request.Query["returnUrl"]}");
+                }
+                else
+                {
+                    context.Response.Redirect("/");
+                }
                 return;
             }
             else

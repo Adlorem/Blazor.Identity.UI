@@ -39,7 +39,7 @@ namespace Blazor.Identity.UI.Components
                 var result = await DeleteUserAccountAsync(_model.Password);
                 if (result.Succeeded)
                 {
-                    _navigationManager.NavigateTo("/Account/Logout", forceLoad: true);
+                    _navigationManager.NavigateTo($"/Account/Logout?returnUrl=/Account/Deleted", forceLoad: true);
                 }
                 else
                 {

@@ -178,6 +178,15 @@ namespace Blazor.Identity.UI {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Your account has been successfully deleted, and your personal informations has been removed from our system..
+        /// </summary>
+        public static string DeleteAccountConfirmation {
+            get {
+                return ResourceManager.GetString("DeleteAccountConfirmation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Deleting your personal data will permanently remove your account, and this cannot be recovered..
         /// </summary>
         public static string DeleteAccountWarning {
