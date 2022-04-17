@@ -4,15 +4,11 @@ using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Primitives;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace Blazor.Identity.UI.Pages.Identity.Account
 {
-    public partial class ConfirmEmail
+    public partial class ConfirmEmailChange
     {
         [Inject]
         NavigationManager _navigationManger { get; set; }
@@ -23,6 +19,7 @@ namespace Blazor.Identity.UI.Pages.Identity.Account
         private bool _isEmailConfirmed = false;
         private StringValues userId;
         private StringValues codeId;
+        private StringValues newEmail;
         private AlertMessage _alertMessage = AlertMessage.Hide();
 
         protected override async Task OnAfterRenderAsync(bool firstRender)
@@ -33,23 +30,24 @@ namespace Blazor.Identity.UI.Pages.Identity.Account
 
                 QueryHelpers.ParseQuery(uri.Query).TryGetValue("user", out userId);
                 QueryHelpers.ParseQuery(uri.Query).TryGetValue("code", out codeId);
+                QueryHelpers.ParseQuery(uri.Query).TryGetValue("email", out newEmail);
 
-                if (string.IsNullOrEmpty(userId.ToString()) || string.IsNullOrEmpty(userId))
+                if (string.IsNullOrEmpty(userId.ToString()) || string.IsNullOrEmpty(userId) || string.IsNullOrEmpty(newEmail))
                 {
                     _alertMessage = AlertMessage.Show(AlertType.AlertDanger, "Error"
                         , new[] { "WeCouldNotProcessThisRequest" });
                 }
                 else
                 {
-                    var result = await ProcessEmailConfirmation(userId.ToString(), codeId.ToString());
+                    var result = await ProcessEmailChangeAsync(userId.ToString(), newEmail.ToString(), codeId.ToString());
 
                     if (result.Succeeded)
                     {
                         _alertMessage = AlertMessage.Show(AlertType.AlertSuccess, "Congratulations"
-                            , new[] { "YouHaveSuccessfullyConfirmedEmail" });
+                            , new[] { "YouHaveSuccessfullyChangedYourEmail" });
                         _isEmailConfirmed = true;
                     }
-                    else if (result.Errors is not null)
+                    else
                     {
                         _alertMessage = AlertMessage.Show(AlertType.AlertDanger, result.Errors.Select(x => x.Description));
                     }
@@ -60,7 +58,7 @@ namespace Blazor.Identity.UI.Pages.Identity.Account
             }
         }
 
-        private async Task<IdentityResult> ProcessEmailConfirmation(string userId, string token)
+        private async Task<IdentityResult> ProcessEmailChangeAsync(string userId, string email, string token)
         {
 
             var user = await _userManager.FindByIdAsync(userId);
@@ -71,7 +69,8 @@ namespace Blazor.Identity.UI.Pages.Identity.Account
             });
 
             token = Encoding.UTF8.GetString(WebEncoders.Base64UrlDecode(token));
-            var result = await _userManager.ConfirmEmailAsync(user, token);
+            var result = await _userManager.ChangeEmailAsync(user, email, token);
+            await _userManager.SetUserNameAsync(user, email);
 
             return result;
         }

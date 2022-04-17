@@ -1,0 +1,37 @@
+﻿@if (_user == null)
+{
+    @_localizer["Loading"]
+}
+else
+{
+    <div class="card">
+        <div class="card-body">
+            <Alert AlertMessage="_alertMessage" />
+            <div class="row">
+                <div class="col-md-4">
+                    <EditForm Model="@_model" OnValidSubmit="OnValidSubmit">
+                        <DataAnnotationsValidator />
+                        <div class="form-floating mb-3">
+                            <InputText @bind-Value="_user.Email" class="form-control" id="floatingCurrentEmail" placeholder="@_localizer["CurrentEmail"]" disabled />
+                            <label for="floatingCurrentEmail">@_localizer["CurrentEmail"]</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <InputText @bind-Value="_model.NewEmail" class="form-control" id="floatingNewEmail" placeholder="@_localizer["NewEmail"]" />
+                            <label for="floatingNewEmail">@_localizer["NewEmail"]</label>
+                            <ValidationMessage For="@(() => _model.NewEmail)" />
+                        </div>
+                        <div class="d-grid mb-2">
+                            <button disabled="@_isLoading" class="btn btn-lg btn-primary btn-login fw-bold text-uppercase">
+                                @_localizer["Save"]
+                                @if (_isLoading)
+                                {
+                                    <span class="spinner-border spinner-border-sm mr-1"></span>
+                                }
+                            </button>
+                        </div>
+                    </EditForm>
+                </div>
+            </div>
+        </div>
+    </div>
+}

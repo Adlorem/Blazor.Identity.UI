@@ -1,6 +1,31 @@
 ﻿@page "/Account/Manage"
+@inject IStringLocalizer<Language> _localizer
 
-<h3>Index</h3>
+<AuthorizeView>
+    <Authorized>
+        <TabControl>
+            <TabPage Text="@_localizer["YourPersonalData"]">
+                <UserPersonalDataForm />
+            </TabPage>
+            <TabPage Text="@_localizer["ChangeEmail"]">
+                <ChangeEmailForm />
+            </TabPage>
+            <TabPage Text="@_localizer["TwoFactorAuthentication"]">               
+            </TabPage>
+            <TabPage Text="@_localizer["ChangePassword"]">
+                <ChangePasswordForm />
+            </TabPage>
+            <TabPage Text="@_localizer["ManagePersonalData"]">
+                <ManagePersonalDataForm />
+            </TabPage>
+        </TabControl>
+    </Authorized>
+    <NotAuthorized>
+        <Blazor.Identity.UI.Components.LoginForm />
+    </NotAuthorized>
+</AuthorizeView>
+
+
 
 @code {
 

@@ -9,14 +9,17 @@ namespace Blazor.Identity.UI.Common
     {
         private static List<Assembly> _assemblies;
 
+        /// <summary>
+        /// Gets all additiona assebmlies to support main assembly dapper components.
+        /// Suprisingly actually you need to add only one to get all working.
+        /// </summary>
+        /// <returns></returns>
         public static List<Assembly> GetAll()
         {
             if (_assemblies == null)
             {
                 _assemblies = new List<Assembly>{
                 typeof(Login).Assembly,
-                typeof(Register).Assembly,
-                typeof(ConfirmEmail).Assembly,
               };
             }
 

@@ -24,6 +24,10 @@ namespace Blazor.Identity.UI.Common
         public AlertMessage(IEnumerable<string> messages)
         {
             IsVisible = true;
+            if (messages == null)
+            {
+                messages = new List<string> { "We could not process this request" };
+            }
             Messages = messages;
         }
 
@@ -43,6 +47,10 @@ namespace Blazor.Identity.UI.Common
         public static AlertMessage Show(string alertType, string title, IEnumerable<string> messages)
         {
             return new AlertMessage(alertType, title, messages);
+        }
+        public static AlertMessage ShowDefaultError()
+        {
+            return new AlertMessage(Enums.AlertType.AlertDanger, null, null);
         }
 
         public static AlertMessage Hide ()

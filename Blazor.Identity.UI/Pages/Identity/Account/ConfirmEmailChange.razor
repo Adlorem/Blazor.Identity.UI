@@ -1,0 +1,15 @@
+﻿@page "/Account/ConfirmEmailChange"
+
+@if (_isLoading == true)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <Blazor.Identity.UI.Components.Alert AlertMessage="_alertMessage" />
+
+    @if (_isEmailConfirmed)
+    {
+        <Blazor.Identity.UI.Components.LoginForm />
+    }
+}

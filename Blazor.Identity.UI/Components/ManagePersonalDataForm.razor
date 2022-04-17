@@ -1,0 +1,37 @@
+﻿<div class="card">
+    <div class="card-body">
+        <Alert AlertMessage="_alertMessage" />
+        <div class="row">
+            <div class="col-md-4">
+                <button class="btn btn-lg btn-primary btn-login fw-bold text-uppercase" @onclick="() => DownloadPersonalDataAsync()">@_localizer["DownloadPersonalData"]</button>
+            </div>
+            <div class="col-md-4">
+                @if (_isConfirmDelete == false)
+                {
+                    <button class="btn btn-lg btn-danger btn-login fw-bold text-uppercase" @onclick="() => ConfirmAccountDelete()">@_localizer["DeleteAccount"]</button>
+                }
+                else
+                {
+                    <EditForm Model="@_model" OnValidSubmit="OnValidSubmit">
+                        <DataAnnotationsValidator />
+                        <div class="form-floating mb-3">
+                            <InputText @bind-Value="_model.Password" class="form-control" id="floatingPassword" placeholder="@_localizer["Password"]" />
+                            <label for="floatingPassword">@_localizer["Password"]</label>
+                            <ValidationMessage For="@(() => _model.Password)" />
+                        </div>
+                        <div class="d-grid mb-2">
+                            <button disabled="@_isLoading" class="btn btn-lg btn-primary btn-login fw-bold text-uppercase">
+                                @_localizer["Delete"]
+                                @if (_isLoading)
+                                {
+                                    <span class="spinner-border spinner-border-sm mr-1"></span>
+                                }
+                            </button>
+                        </div>
+                    </EditForm>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+

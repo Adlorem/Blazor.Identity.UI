@@ -79,6 +79,24 @@ namespace Blazor.Identity.UI {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Change email.
+        /// </summary>
+        public static string ChangeEmail {
+            get {
+                return ResourceManager.GetString("ChangeEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Change password.
+        /// </summary>
+        public static string ChangePassword {
+            get {
+                return ResourceManager.GetString("ChangePassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Check your inbox to complete password change..
         /// </summary>
         public static string CheckYourInboxToCompletePasswordReset {
@@ -88,11 +106,29 @@ namespace Blazor.Identity.UI {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to klick here.
+        ///   Looks up a localized string similar to Check you inbox to confirm new email..
+        /// </summary>
+        public static string CheckYourInboxToConfirmEmailChange {
+            get {
+                return ResourceManager.GetString("CheckYourInboxToConfirmEmailChange", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to click here.
         /// </summary>
         public static string ClickHere {
             get {
                 return ResourceManager.GetString("ClickHere", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Confirm email change.
+        /// </summary>
+        public static string ConfirmNewEmail {
+            get {
+                return ResourceManager.GetString("ConfirmNewEmail", resourceCulture);
             }
         }
         
@@ -124,6 +160,33 @@ namespace Blazor.Identity.UI {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Current email.
+        /// </summary>
+        public static string CurrentEmail {
+            get {
+                return ResourceManager.GetString("CurrentEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Delete account.
+        /// </summary>
+        public static string DeleteAccount {
+            get {
+                return ResourceManager.GetString("DeleteAccount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Deleting your personal data will permanently remove your account, and this cannot be recovered..
+        /// </summary>
+        public static string DeleteAccountWarning {
+            get {
+                return ResourceManager.GetString("DeleteAccountWarning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to You don&apos;t have account? Register..
         /// </summary>
         public static string DontHaveAccountRegister {
@@ -138,6 +201,15 @@ namespace Blazor.Identity.UI {
         public static string DontRememberPassword {
             get {
                 return ResourceManager.GetString("DontRememberPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Download data.
+        /// </summary>
+        public static string DownloadPersonalData {
+            get {
+                return ResourceManager.GetString("DownloadPersonalData", resourceCulture);
             }
         }
         
@@ -169,6 +241,24 @@ namespace Blazor.Identity.UI {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Export data.
+        /// </summary>
+        public static string ExportData {
+            get {
+                return ResourceManager.GetString("ExportData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Incorrect password.
+        /// </summary>
+        public static string IncorrectPassword {
+            get {
+                return ResourceManager.GetString("IncorrectPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Join.
         /// </summary>
         public static string Join {
@@ -196,11 +286,56 @@ namespace Blazor.Identity.UI {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Manage personal data.
+        /// </summary>
+        public static string ManagePersonalData {
+            get {
+                return ResourceManager.GetString("ManagePersonalData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to New email.
+        /// </summary>
+        public static string NewEmail {
+            get {
+                return ResourceManager.GetString("NewEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to New password.
+        /// </summary>
+        public static string NewPassword {
+            get {
+                return ResourceManager.GetString("NewPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Current password.
+        /// </summary>
+        public static string OldPassword {
+            get {
+                return ResourceManager.GetString("OldPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Password.
         /// </summary>
         public static string Password {
             get {
                 return ResourceManager.GetString("Password", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please confirm email change and.
+        /// </summary>
+        public static string PleaseConfirmEmailChange {
+            get {
+                return ResourceManager.GetString("PleaseConfirmEmailChange", resourceCulture);
             }
         }
         
@@ -313,11 +448,29 @@ namespace Blazor.Identity.UI {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to This email is already taken..
+        /// </summary>
+        public static string ThisEmailIsAlreadyTaken {
+            get {
+                return ResourceManager.GetString("ThisEmailIsAlreadyTaken", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to To reset your password.
         /// </summary>
         public static string ToResetYourPassword {
             get {
                 return ResourceManager.GetString("ToResetYourPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Two factor authentication.
+        /// </summary>
+        public static string TwoFactorAuthentication {
+            get {
+                return ResourceManager.GetString("TwoFactorAuthentication", resourceCulture);
             }
         }
         
@@ -340,6 +493,15 @@ namespace Blazor.Identity.UI {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to You have succesfully changed your email address. Please login with new email..
+        /// </summary>
+        public static string YouHaveSuccessfullyChangedYourEmail {
+            get {
+                return ResourceManager.GetString("YouHaveSuccessfullyChangedYourEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to You have successfully confirmed your account. You can login now!.
         /// </summary>
         public static string YouHaveSuccessfullyConfirmedEmail {
@@ -354,6 +516,24 @@ namespace Blazor.Identity.UI {
         public static string YouHaveSuccessfullyResetYourPassword {
             get {
                 return ResourceManager.GetString("YouHaveSuccessfullyResetYourPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You have successfully set your phone number..
+        /// </summary>
+        public static string YouHaveSuccessfullySetEmail {
+            get {
+                return ResourceManager.GetString("YouHaveSuccessfullySetEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your personal data.
+        /// </summary>
+        public static string YourPersonalData {
+            get {
+                return ResourceManager.GetString("YourPersonalData", resourceCulture);
             }
         }
     }

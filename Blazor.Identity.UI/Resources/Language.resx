@@ -123,11 +123,23 @@
   <data name="ActivationResentCheckYourInbox" xml:space="preserve">
     <value>We have resent your activation email. Please check your inbox.</value>
   </data>
+  <data name="ChangeEmail" xml:space="preserve">
+    <value>Change email</value>
+  </data>
+  <data name="ChangePassword" xml:space="preserve">
+    <value>Change password</value>
+  </data>
   <data name="CheckYourInboxToCompletePasswordReset" xml:space="preserve">
     <value>Check your inbox to complete password change.</value>
   </data>
+  <data name="CheckYourInboxToConfirmEmailChange" xml:space="preserve">
+    <value>Check you inbox to confirm new email.</value>
+  </data>
   <data name="ClickHere" xml:space="preserve">
-    <value>klick here</value>
+    <value>click here</value>
+  </data>
+  <data name="ConfirmNewEmail" xml:space="preserve">
+    <value>Confirm email change</value>
   </data>
   <data name="ConfirmPassword" xml:space="preserve">
     <value>Confirm password</value>
@@ -138,11 +150,23 @@
   <data name="Congratulations" xml:space="preserve">
     <value>Congratulations !</value>
   </data>
+  <data name="CurrentEmail" xml:space="preserve">
+    <value>Current email</value>
+  </data>
+  <data name="DeleteAccount" xml:space="preserve">
+    <value>Delete account</value>
+  </data>
+  <data name="DeleteAccountWarning" xml:space="preserve">
+    <value>Deleting your personal data will permanently remove your account, and this cannot be recovered.</value>
+  </data>
   <data name="DontHaveAccountRegister" xml:space="preserve">
     <value>You don't have account? Register.</value>
   </data>
   <data name="DontRememberPassword" xml:space="preserve">
     <value>I don't remember password</value>
+  </data>
+  <data name="DownloadPersonalData" xml:space="preserve">
+    <value>Download data</value>
   </data>
   <data name="Email" xml:space="preserve">
     <value>Email</value>
@@ -153,6 +177,12 @@
   <data name="Error" xml:space="preserve">
     <value>Error !</value>
   </data>
+  <data name="ExportData" xml:space="preserve">
+    <value>Export data</value>
+  </data>
+  <data name="IncorrectPassword" xml:space="preserve">
+    <value>Incorrect password</value>
+  </data>
   <data name="Join" xml:space="preserve">
     <value>Join</value>
   </data>
@@ -162,8 +192,23 @@
   <data name="Logout" xml:space="preserve">
     <value>Logout</value>
   </data>
+  <data name="ManagePersonalData" xml:space="preserve">
+    <value>Manage personal data</value>
+  </data>
+  <data name="NewEmail" xml:space="preserve">
+    <value>New email</value>
+  </data>
+  <data name="NewPassword" xml:space="preserve">
+    <value>New password</value>
+  </data>
+  <data name="OldPassword" xml:space="preserve">
+    <value>Current password</value>
+  </data>
   <data name="Password" xml:space="preserve">
     <value>Password</value>
+  </data>
+  <data name="PleaseConfirmEmailChange" xml:space="preserve">
+    <value>Please confirm email change and</value>
   </data>
   <data name="PleaseConfirmYourAccount" xml:space="preserve">
     <value>Please confirm you account activation and</value>
@@ -201,8 +246,14 @@
   <data name="SignIn" xml:space="preserve">
     <value>Sign in</value>
   </data>
+  <data name="ThisEmailIsAlreadyTaken" xml:space="preserve">
+    <value>This email is already taken.</value>
+  </data>
   <data name="ToResetYourPassword" xml:space="preserve">
     <value>To reset your password</value>
+  </data>
+  <data name="TwoFactorAuthentication" xml:space="preserve">
+    <value>Two factor authentication</value>
   </data>
   <data name="UnknownUser" xml:space="preserve">
     <value>Unknown user.</value>
@@ -210,10 +261,19 @@
   <data name="WeCouldNotProcessThisRequest" xml:space="preserve">
     <value>We could not process this request.</value>
   </data>
+  <data name="YouHaveSuccessfullyChangedYourEmail" xml:space="preserve">
+    <value>You have succesfully changed your email address. Please login with new email.</value>
+  </data>
   <data name="YouHaveSuccessfullyConfirmedEmail" xml:space="preserve">
     <value>You have successfully confirmed your account. You can login now!</value>
   </data>
   <data name="YouHaveSuccessfullyResetYourPassword" xml:space="preserve">
     <value>You have successfully reset your password. You can login with new password.</value>
+  </data>
+  <data name="YouHaveSuccessfullySetEmail" xml:space="preserve">
+    <value>You have successfully set your phone number.</value>
+  </data>
+  <data name="YourPersonalData" xml:space="preserve">
+    <value>Your personal data</value>
   </data>
 </root>
