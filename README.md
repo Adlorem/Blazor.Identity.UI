@@ -1,5 +1,5 @@
 
-# Blazor Microsoft Identity with native components.
+# Microsoft Identity UI with blazor components.
 
 The aim of this project is to replace Microsoft.AspNetCore.Identity.UI cshtml files and replace them with native blazor
 components. Library uses middleware to authenticate user and create Blazor version of Microsoft Identity.
