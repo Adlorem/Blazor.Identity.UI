@@ -33,7 +33,7 @@ Remember to implement your IEmailService in executing assembly.
 
 3. Modify or add following blazor component to display login in your app header
 
-``` blazor
+``` razor
 <AuthorizeView>
     <Authorized>
         <a href="Account/Manage">Hello, @context.User.Identity?.Name!</a>
