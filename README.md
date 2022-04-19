@@ -50,5 +50,8 @@ Remember to implement your IEmailService in executing assembly.
 
 For further details check BlazorIdeintityUIExample project.
 
+## Screenshots
+
+![App Screenshot](https://githhub.com/Adlorem/Blazor.Identity.UI/blob/master/blazor_login.jpg?text=App+Screenshot+Here)
 
 
