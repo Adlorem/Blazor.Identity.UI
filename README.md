@@ -52,6 +52,8 @@ For further details check BlazorIdeintityUIExample project.
 
 ## Screenshots
 
+![App Screenshot](https://github.com/Adlorem/Blazor.Identity.UI/blob/master/blazor_register.jpg?text=App+Screenshot+Login)
+
 ![App Screenshot](https://github.com/Adlorem/Blazor.Identity.UI/blob/master/blazor_login.jpg?text=App+Screenshot+Login)
 
 
