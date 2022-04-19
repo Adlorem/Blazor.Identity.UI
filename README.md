@@ -25,7 +25,7 @@ Remember to implement your IEmailService in executing assembly.
 
 3. Modify your App.razor and modify following line
 
-```c#
+```razor
 @using Blazor.Identity.UI.Common
 
 <Router AppAssembly="@typeof(App).Assembly" AdditionalAssemblies="@SharedComponents.GetAll()">
