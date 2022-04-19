@@ -29,6 +29,15 @@ namespace Blazor.Identity.UI.Components
         private bool _isLoading = false;
         private bool _isConfirmDelete = false;
         private IdentityUser _user;
+        private IJSObjectReference module { get; set; }
+
+        protected override async Task OnAfterRenderAsync(bool firstRender)
+        {
+            if (firstRender)
+            {
+                module = await _jsRuntime.InvokeAsync<IJSObjectReference>("import", "./_content/Blazor.Identity.UI/scripts/ui_utils.js");
+            }
+        }
 
         private async void OnValidSubmit()
         {
@@ -82,8 +91,7 @@ namespace Blazor.Identity.UI.Components
 
             var file = JsonSerializer.SerializeToUtf8Bytes(personalData);
 
-            await _jsRuntime.InvokeAsync<object>("SaveAsFile", "PersonalData.json",
-            Convert.ToBase64String(file));
+            await module.InvokeAsync<string>("DownloadFile", "Personal_Data.json", "application/octet-stream", file);
         }
 
         private void ConfirmAccountDelete()

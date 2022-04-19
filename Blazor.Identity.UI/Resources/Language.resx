@@ -267,6 +267,9 @@
   <data name="YouHaveSuccessfullyChangedYourEmail" xml:space="preserve">
     <value>You have succesfully changed your email address. Please login with new email.</value>
   </data>
+  <data name="YouHaveSuccessfullyChangedYourPassword" xml:space="preserve">
+    <value>You have successfully changed your password.</value>
+  </data>
   <data name="YouHaveSuccessfullyConfirmedEmail" xml:space="preserve">
     <value>You have successfully confirmed your account. You can login now!</value>
   </data>

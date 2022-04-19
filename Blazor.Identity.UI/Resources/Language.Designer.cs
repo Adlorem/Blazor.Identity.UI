@@ -511,6 +511,15 @@ namespace Blazor.Identity.UI {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to You have successfully changed your password..
+        /// </summary>
+        public static string YouHaveSuccessfullyChangedYourPassword {
+            get {
+                return ResourceManager.GetString("YouHaveSuccessfullyChangedYourPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to You have successfully confirmed your account. You can login now!.
         /// </summary>
         public static string YouHaveSuccessfullyConfirmedEmail {

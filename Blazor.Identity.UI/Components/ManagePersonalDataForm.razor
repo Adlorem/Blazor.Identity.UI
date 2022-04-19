@@ -15,7 +15,7 @@
                     <EditForm Model="@_model" OnValidSubmit="OnValidSubmit">
                         <DataAnnotationsValidator />
                         <div class="form-floating mb-3">
-                            <InputText @bind-Value="_model.Password" class="form-control" id="floatingPassword" placeholder="@_localizer["Password"]" />
+                            <InputText @bind-Value="_model.Password" type="password" class="form-control" id="floatingPassword" placeholder="@_localizer["Password"]" />
                             <label for="floatingPassword">@_localizer["Password"]</label>
                             <ValidationMessage For="@(() => _model.Password)" />
                         </div>
